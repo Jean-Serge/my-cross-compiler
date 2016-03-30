@@ -47,3 +47,5 @@ RUN make all-gcc
 RUN make all-target-libgcc
 RUN make install-gcc
 RUN make install-target-libgcc
+
+WORKDIR /tmp
