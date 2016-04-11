@@ -53,4 +53,11 @@ RUN wget -O- http://ftpmirror.gnu.org/gcc/gcc-5.3.0/gcc-5.3.0.tar.gz  \
     && make clean                                                     \
     && rm -rf gcc-src
 
+## Build rust
+RUN curl https://github.com/rust-lang/rust  \
+    && ./rust/configure --target=${TARGET}  \
+                        --prefix=${PREFIX}  \
+    && make                                 \
+    && make install
+
 WORKDIR /tmp
